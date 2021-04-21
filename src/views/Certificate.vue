@@ -169,7 +169,7 @@ export default {
         next(() => {
             store.dispatch('setLoading', true).then(() => {
                 if (to.params.txHash) {
-                     let apiUrl = 'https://blockchain.casagirelli.it/lavis/transactions/'
+                     let apiUrl = 'https://blockchain.casagirelli.it/transactions/'
                      console.log(apiUrl)
                     axios.get(apiUrl +  to.params.txHash).then(response => {
                         // axios.get('/txResponse.json').then(response => {
