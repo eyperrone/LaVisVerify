@@ -1,4 +1,4 @@
-# peroni-landing
+# LaVis-landing
 
 ## Project setup
 ```
