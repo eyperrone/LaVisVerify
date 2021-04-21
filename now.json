@@ -1,9 +1,0 @@
-{
-  "name": "lv-landing",
-  "build": {
-    "env": {
-      "VUE_APP_CARCIOFO_API": "@lv_merluzzo_api",
-      "VUE_APP_NETWORK": "@bf_network"
-    }
-  }
-}
