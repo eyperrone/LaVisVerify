@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/:txHash',
+    path: '/certification/:txHash',
     name: 'Certification',
     component: () => import(/* webpackChunkName: "certificate" */ '../views/Certificate.vue')
   }

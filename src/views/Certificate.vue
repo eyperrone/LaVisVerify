@@ -32,7 +32,7 @@
                 </v-row>
                 <v-row class="mt-0">
                     <v-col>
-                        <v-btn :href="$network + '/tx/' + response.txhash" target="_blank">{{$t('etherscan')}}</v-btn>
+                        <v-btn color="#601c35" :href="$network + '/tx/' + response.txhash" target="_blank">{{$t('etherscan')}}</v-btn>
                     </v-col>
                 </v-row>
             </div>
@@ -50,7 +50,7 @@
                         <template v-slot:activator="{ on }">
                             <v-btn v-on="on" tile icon v-clipboard:copy="JSON.stringify(response.source_data)"
                                 v-clipboard:success="onCopy" v-clipboard:error="onError">
-                                <v-icon class="black--text">content_copy</v-icon>
+                                <v-icon class="white--text">content_copy</v-icon>
                             </v-btn>
                         </template>
                         <span class="tooltip" style="height: 20px">{{$t('copy')}}</span>
@@ -58,10 +58,10 @@
                 </h3>
                 <v-row v-if="$vuetify.breakpoint.smAndUp" class="justify-center">
                     <v-col cols="12">
-                        <v-btn icon large class="secondary" @click="json = false" v-if="json == true">
+                        <v-btn icon large class="button-custom" @click="json = false" v-if="json == true">
                             <v-icon class="white--text">notes</v-icon>
                         </v-btn>
-                        <v-btn icon large class="secondary" @click="json = true" v-if="json == false">
+                        <v-btn icon large class="button-custom" @click="json = true" v-if="json == false">
                             <v-icon class="white--text">code</v-icon>
                         </v-btn>
                     </v-col>
@@ -73,18 +73,18 @@
                             :value="JSON.stringify(response.source_data, undefined, 4)" />
                     </v-col>
                     <v-col v-else cols="12" sm="1a" md="10" lg="10" xl="10" xs="12" class="mx-auto">
-                        <v-tabs v-if="response.source_data" center-active show-arrows next-icon="navigate_next" prev-icon="navigate_before" v-model="tab" height="auto" background-color="accent"
-                            color="primary" grow dark class="tab-dati mt-1">
+                        <v-tabs v-if="response.source_data" center-active show-arrows next-icon="navigate_next" prev-icon="navigate_before" v-model="tab" height="auto" background-color="#601c35"
+                             grow dark class="tab-dati mt-1">
                             <v-tab v-for="(item, index) in originalData" :key="index" class="tab-index">
-                                <h5>{{ index | titleCase }}</h5>
+                                <h5>{{ item.name | titleCase }}</h5>
                             </v-tab>
                         </v-tabs>
                         <v-tabs-items v-model="tab" class="tab-item">
                             <v-tab-item v-for="(item, index) in originalData" :key="index">
                                 <v-container>
                                     <v-row outlined light v-for="(value , key , pos) in item" :key="pos">
-                                        <v-col class="mx-auto pa-0" cols="7">
-                                            <b>{{ key | titleCase }}</b> : {{value}}
+                                        <v-col class="mx-auto pa-0" cols="7" v-if="key === 'date'">
+                                            <strong> {{value}} </strong>
                                             <!-- {{ $t(key) || null }} -->
                                         </v-col>
                                     </v-row>
@@ -170,8 +170,7 @@ export default {
             store.dispatch('setLoading', true).then(() => {
                 if (to.params.txHash) {
                      let apiUrl = 'https://blockchain.casagirelli.it/transactions/'
-                     console.log(apiUrl)
-                    axios.get(apiUrl +  to.params.txHash).then(response => {
+                   axios.get(apiUrl +  to.params.txHash).then(response => {
                         // axios.get('/txResponse.json').then(response => {
                         if (response.data[0].txhash && response.data[0].timestamp) {
                             if (to.params.tab) {
@@ -306,12 +305,12 @@ export default {
     overflow: hidden;
 }
 .certificate-poster-wrapper {
-  border: 1px solid #CE1628;
+  border: 1px solid #601c35;
   padding: 10px;
   margin: 45px auto 1rem auto;
 
   .certificate-poster {
-    border: 3px solid #CE1628;
+    border: 3px solid #601c35;
     padding: 15px;
 
     .ribbon-wrapper {
@@ -373,7 +372,7 @@ export default {
   width: auto;
   max-width: 70%;
   position: relative;
-  background: #CE1628;
+  background: #601c35;
   color: #fff;
   text-align: center;
   padding: 1em 1.1em; /* Adjust to suit */
@@ -384,7 +383,7 @@ export default {
   position: absolute;
   display: block;
   bottom: -1em;
-  border: 1.5em solid rgb(224, 25, 45);
+  border: 1.5em solid #601c35;
   z-index: -1;
 }
 .ribbon:before {
@@ -402,7 +401,7 @@ export default {
   position: absolute;
   display: block;
   border-style: solid;
-  border-color: rgb(206, 14, 33);
+  border-color: #601c35;
   bottom: -1em;
 }
 .ribbon .ribbon-content:before {
@@ -418,5 +417,15 @@ export default {
     font-style: italic;
     margin-left: 0.5%;
     margin-right: 0.5%;
+}
+
+.v-application .accent .custom {
+    background-color: #601c35;
+    border-color: #601c35 !important;
+}
+
+.button-custom {
+    background-color: #601c35 !important;
+    color: #fff !important;
 }
 </style>

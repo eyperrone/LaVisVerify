@@ -38,7 +38,7 @@
     </v-content>
 <v-footer
     :class="{'footer': $vuetify.breakpoint.mdAndDown}"
-    class="ma-0 pa-0"
+    class="button-custom ma-0 pa-0"
   >
   <v-container class="pb-0">
     <v-row
@@ -46,7 +46,7 @@
       align="center"
     >
       <v-col
-        class="primary mr-0 text-center white--text"
+        class="button-custom mr-0 text-center white--text"
         cols="12"
       >
 
@@ -195,6 +195,10 @@ a {
 }
 .badreferrer {
   font-size: 1.2rem
+}
+.button-custom {
+    background-color: #601c35 !important;
+    color: #fff !important;
 }
 
 </style>
