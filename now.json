@@ -1,0 +1,10 @@
+{
+  "name": "bf-landing",
+  "build": {
+    "env": {
+      "VUE_APP_MERLUZZO_API": "@bf_merluzzo_api",
+      "VUE_APP_CARCIOFO_API": "@bf_merluzzo_api",
+      "VUE_APP_NETWORK": "@bf_network"
+    }
+  }
+}
