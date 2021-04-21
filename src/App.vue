@@ -49,7 +49,9 @@
         class="primary mr-0 text-center white--text"
         cols="12"
       >
-      Copyright © bofrost* S.p.a. - via Clauzetto 4, San Vito al Tagliamento (PN)
+
+      <p>CASA GIRELLI S.P.A.</p> <p class="small">Viale Verona, 182 38123 Trento (TN)<br> P.I./C.F. 00203860226 - Registro Imp. Trento<br> N. REA TN-69728</p> <p class="small">tel: +39 0461.380.800 - Fax. +39 0461.380.846<br> email: <a href="mailto:info@casagirelli.it">info@casagirelli.it</a><br> web: <a href="http://www.casagirelli.it" target="_blank">www.casagirelli.it</a></p>
+
       </v-col>
     </v-row>
     <!-- <v-row
@@ -176,10 +178,12 @@ body {
 .footer {
   font-size: 0.8em
 }
+
 a {
   text-decoration: none!important;
-  color: black!important;
+  color: white!important;
 }
+
 .h2-mobile {
         font-size: 1.2rem
     }
