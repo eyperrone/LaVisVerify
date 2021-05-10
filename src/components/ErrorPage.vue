@@ -10,11 +10,11 @@
     <p class="text-center">{{errorMessage}}</p>
       </v-col>
     </v-row>
-  <v-row>
+  <!-- <v-row>
     <v-col class="d-flex justify-center">
         <v-btn @click="goToAnsa">{{$t('error.backtoansa')}}</v-btn>
     </v-col>
-  </v-row>
+  </v-row> -->
   </v-container>
 </template>
 
